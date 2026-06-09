@@ -551,51 +551,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="bd">Your perfect destination wedding starts with a conversation. Share your plans, and we'll create a proposal designed according to your traditions.</p>
       <span class="recv-lbl">What You'll Receive (Free)</span>
       <ul class="recv-list">
-        <li>Customised Multi-Day Wedding Itinerary</li>
-        <li>Personalised Cultural Ceremony Planning Assistance</li>
-        <li>Exclusive Palladium Partner Rates and Perks</li>
-        <li>Preferred Date and Venue Availability Check</li>
-        <li>Handpicked Vendors — Decor, Entertainment, Priests and More</li>
+        <li>Full Name</li>
+        <li>Phone Number</li>
+        <li>Country (United States, Mexico, Canada)</li>
+        <li>Estimated Guest Count</li>
+        <li>Wedding Date</li>
+        <li>Estimated Budget Range (&gt; $15,000, $15,000–$30,000, $30,000–$75,000, $75k+)</li>
       </ul>
     </div>
     <div class="fc" id="formWrap">
       <div id="formContent">
         <div class="fc-h">Book Your Free <span>Consultation</span></div>
         <p class="fc-sub">Get a personalised proposal within 24 hours</p>
-        <div class="fg-row">
-          <div class="fg"><label>Bride's Name *</label><input type="text" placeholder="e.g. Simran" id="brideName"/></div>
-          <div class="fg"><label>Groom's Name *</label><input type="text" placeholder="e.g. Harpreet" id="groomName"/></div>
-        </div>
-        <div class="fg-row">
-          <div class="fg"><label>Your Email *</label><input type="email" placeholder="you@email.com" id="email"/></div>
-          <div class="fg"><label>Country *</label><select id="country"><option value="" disabled selected>Select</option><option>United States</option><option>Canada</option><option>United Kingdom</option><option>India</option><option>Mexico</option><option>Other</option></select></div>
-        </div>
-        <div class="fg-row">
-          <div class="fg"><label>Wedding Date</label><input type="month" id="weddingDate" style="color-scheme:dark"/></div>
-          <div class="fg"><label>Expected Guests *</label><select id="guests"><option value="" disabled selected>Select</option><option>Under 50</option><option>50 to 100</option><option>100 to 200</option><option>200 to 350</option><option>350 to 500</option><option>500+</option></select></div>
-        </div>
-        <div class="fg-row">
-          <div class="fg"><label>Wedding Tradition</label><select id="weddingStyle"><option value="" disabled selected>Select</option><option>Hindu</option><option>Sikh</option><option>Muslim / Nikah</option><option>Jain</option><option>Multi-faith</option><option>Other</option></select></div>
-          <div class="fg"><label>Preferred Destination</label><select id="destination"><option value="" disabled selected>Select</option><option>Riviera Maya, Mexico</option><option>Costa Mujeres, Cancun</option><option>Riviera Nayarit</option><option>Punta Cana, DR</option><option>Cap Cana, DR</option><option>Jamaica</option><option>Open to Suggestions</option></select></div>
-        </div>
-        <div class="fg">
-          <span class="ck-lbl">Ceremonies Planned</span>
-          <div class="ck-grid" id="cer-checks">
-            <label class="ck"><input type="checkbox" value="Haldi"/><span class="ck-box"></span>Haldi</label>
-            <label class="ck"><input type="checkbox" value="Mehndi"/><span class="ck-box"></span>Mehndi</label>
-            <label class="ck"><input type="checkbox" value="Sangeet"/><span class="ck-box"></span>Sangeet</label>
-            <label class="ck"><input type="checkbox" value="Baraat"/><span class="ck-box"></span>Baraat</label>
-            <label class="ck"><input type="checkbox" value="Pheras / Nikah"/><span class="ck-box"></span>Pheras / Nikah</label>
-            <label class="ck"><input type="checkbox" value="Reception"/><span class="ck-box"></span>Reception</label>
-          </div>
-        </div>
-        <div class="fg">
-          <div class="b-row"><span class="b-lbl">Estimated Budget</span><span class="b-val" id="budgetDisplay">$75,000</span></div>
-          <input type="range" id="budget" min="15000" max="500000" step="5000" value="75000" oninput="updateBudget(this.value)"/>
-          <div class="b-mm"><span>$15,000</span><span>$500,000+</span></div>
-        </div>
-        <button class="f-btn" onclick="submitForm()">Explore Wedding Proposal Options</button>
-        <p class="f-trust">A certified North American South Asian Wedding Specialist will review open resort dates and respond within 24 business hours. Your information stays completely private. No high-pressure sales tactics or spam.</p>
+        <div class="fg"><label>Full Name *</label><input type="text" placeholder="Full name" id="fullName"/></div>
+        <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="+1 (___) ___-____" id="phone"/></div>
+        <div class="fg"><label>Country *</label><select id="country"><option value="" disabled selected>Select</option><option>United States</option><option>Canada</option><option>Mexico</option></select></div>
+        <div class="fg"><label>Estimated Guest Count</label><input type="number" placeholder="e.g. 150" id="guestCount"/></div>
+        <div class="fg"><label>Wedding Date</label><input type="date" id="weddingDate" style="color-scheme:dark"/></div>
+        <div class="fg"><label>Estimated Budget Range</label><select id="budget"><option value="" disabled selected>Select</option><option>Under $15,000</option><option>$15,000 – $30,000</option><option>$30,000 – $75,000</option><option>$75,000+</option></select></div>
+        <button class="f-btn" onclick="submitForm()">Get a Personalized Plan</button>
+        <p class="f-trust">100% free • No spam • Delivered in 24 hours</p>
       </div>
       <div class="f-done" id="formDone">
         <div class="f-done-s">Thank you</div>
@@ -623,13 +598,12 @@ function updateBudget(v){
   document.getElementById('budget').style.background='linear-gradient(to right,var(--pink) 0%,var(--pink) '+p+'%,rgba(255,255,255,0.13) '+p+'%)';
 }
 function submitForm(){
-  var req=['brideName','groomName','email','country','guests'],ok=true;
+  var req=['fullName','phone'],ok=true;
   req.forEach(function(id){var el=document.getElementById(id);if(!el||!el.value.trim()){if(el)el.style.borderColor='rgba(212,137,154,0.9)';ok=false;}else el.style.borderColor='';});
   if(!ok)return;
-  var cers=[];
-  document.querySelectorAll('#cer-checks input:checked').forEach(function(cb){cers.push(cb.value)});
-  var data={brideName:document.getElementById('brideName').value.trim(),groomName:document.getElementById('groomName').value.trim(),email:document.getElementById('email').value.trim(),country:document.getElementById('country').value,weddingDate:document.getElementById('weddingDate').value||'Not specified',guestCount:document.getElementById('guests').value,weddingStyle:document.getElementById('weddingStyle').value||'Not specified',destination:document.getElementById('destination').value||'Not specified',ceremonies:cers.join(', ')||'None selected',budget:document.getElementById('budgetDisplay').textContent};
-  fetch('https://script.google.com/macros/s/AKfycbzG1HKftLJMFd_hB-GlpRUp-gqN_RQ14hj45jiDjNNNc_BHOMBvN0oAEHvHNZRI5I96/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+  var data={fullName:document.getElementById('fullName').value.trim(),phone:document.getElementById('phone').value.trim(),country:document.getElementById('country').value||'Not specified',guestCount:document.getElementById('guestCount').value||'Not specified',weddingDate:document.getElementById('weddingDate').value||'Not specified',budget:document.getElementById('budget').value||'Not specified',submittedAt:new Date().toLocaleString()};
+  var params=new URLSearchParams(data).toString();
+  fetch('https://script.google.com/macros/s/AKfycbzG1HKftLJMFd_hB-GlpRUp-gqN_RQ14hj45jiDjNNNc_BHOMBvN0oAEHvHNZRI5I96/exec?'+params,{mode:'no-cors'})
   .then(function(){window.location.href='thank.html'})
   .catch(function(){window.location.href='thank.html'});
 }
