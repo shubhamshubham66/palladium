@@ -146,15 +146,18 @@ img{display:block;max-width:100%}
 .promo-p{font-size:0.9rem;color:var(--body);line-height:1.6}
 .promo-note{display:block;font-size:0.7rem;color:var(--promo-orange);margin-top:0.8rem;font-weight:500}
 
-/* Promo 1 Table */
-.pt-table-wrap{overflow-x:auto;border:1px solid #E5E7EB;border-radius:10px;background:#FAFAFA}
-.ptable{width:100%;border-collapse:collapse;min-width:600px}
-.ptable th,.ptable td{padding:1.2rem;text-align:left;border-bottom:1px solid #E5E7EB}
-.ptable th{background:var(--promo-light);color:var(--promo-blue);font-size:0.85rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase}
-.ptable tr:last-child td{border-bottom:none}
-.ptable td{font-size:0.85rem;color:var(--ink);line-height:1.5}
-.pt-tier{font-weight:700;color:var(--promo-blue);white-space:nowrap}
-.pt-inc{color:var(--body)}
+/* Promo 1 Horizontal Scroll Cards */
+.pt-scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0.5rem 0 1rem}
+.pt-scroll-wrap::-webkit-scrollbar{display:none}
+.pt-cards{display:flex;gap:1.2rem;padding:0 0.5rem}
+.pt-card{min-width:260px;max-width:300px;flex-shrink:0;background:linear-gradient(135deg,#EFF4FF 0%,#fff 100%);border:1px solid #D1E0FF;border-radius:14px;padding:1.5rem 1.3rem;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.pt-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(26,77,183,0.12)}
+.pt-card-nights{font-family:var(--H);font-size:1.8rem;font-weight:700;color:var(--promo-blue);line-height:1;margin-bottom:0.15rem}
+.pt-card-sub{font-size:0.65rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--promo-blue);opacity:0.7;margin-bottom:1rem}
+.pt-card-list{list-style:none;padding:0;margin:0;flex:1}
+.pt-card-list li{font-size:0.82rem;color:var(--ink);line-height:1.5;padding:0.35rem 0;border-bottom:1px solid rgba(26,77,183,0.08);display:flex;align-items:flex-start;gap:0.5rem}
+.pt-card-list li:last-child{border-bottom:none}
+.pt-card-list li::before{content:'✦';color:var(--promo-blue);font-size:0.55rem;margin-top:0.25rem;flex-shrink:0}
 
 /* Promo 2 Grid */
 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
@@ -475,45 +478,85 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="promo-p">Every guest attending your celebration contributes to something greater. Through Palladium's room-night incentive program, larger celebrations can unlock exclusive wedding enhancements.</p>
         <span class="promo-note">⚠ All tiers to be verified with Palladium Hotel Group before publishing.</span>
       </div>
-      <div class="pt-table-wrap">
-        <table class="ptable">
-          <thead>
-            <tr>
-              <th style="width:25%">Room Nights</th>
-              <th>What Your Wedding Unlocks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="pt-tier">500+ nights</td>
-              <td class="pt-inc">4-hr private cocktail event • 8-hr private banquet event • Venue flexibility • Beach ceremony • 3-night honeymoon stay • Moonlight dinner</td>
-            </tr>
-            <tr>
-              <td class="pt-tier">400 nights</td>
-              <td class="pt-inc">3-hr private cocktail event • 4-hr private banquet event • Venue selection flexibility • Beach ceremony option • 3-night honeymoon stay • Moonlight dinner</td>
-            </tr>
-            <tr>
-              <td class="pt-tier">300 nights</td>
-              <td class="pt-inc">2-hr private cocktail event • 5 Indian appetizers • Open bar • 4-hr private banquet event • Indian buffet • Basic décor • 3-night honeymoon stay</td>
-            </tr>
-            <tr>
-              <td class="pt-tier">240 nights</td>
-              <td class="pt-inc">3-hr private function • Indian buffet • Open bar • Basic décor • 2-night honeymoon stay</td>
-            </tr>
-            <tr>
-              <td class="pt-tier">160 nights</td>
-              <td class="pt-inc">2-hr private banquet event • Indian buffet • Open bar • Basic décor • 2-night honeymoon stay</td>
-            </tr>
-            <tr>
-              <td class="pt-tier">100 nights</td>
-              <td class="pt-inc">2-hr private cocktail event • 5 Indian appetizers • Open bar • Basic décor</td>
-            </tr>
-            <tr>
-              <td class="pt-tier">75 nights</td>
-              <td class="pt-inc">1-night honeymoon stay</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="pt-scroll-wrap">
+        <div class="pt-cards">
+          <div class="pt-card">
+            <div class="pt-card-nights">500+</div>
+            <div class="pt-card-sub">Room Nights</div>
+            <ul class="pt-card-list">
+              <li>4-hr private cocktail event</li>
+              <li>8-hr private banquet event</li>
+              <li>Venue flexibility</li>
+              <li>Beach ceremony</li>
+              <li>3-night honeymoon stay</li>
+              <li>Moonlight dinner</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <div class="pt-card-nights">400</div>
+            <div class="pt-card-sub">Room Nights</div>
+            <ul class="pt-card-list">
+              <li>3-hr private cocktail event</li>
+              <li>4-hr private banquet event</li>
+              <li>Venue selection flexibility</li>
+              <li>Beach ceremony option</li>
+              <li>3-night honeymoon stay</li>
+              <li>Moonlight dinner</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <div class="pt-card-nights">300</div>
+            <div class="pt-card-sub">Room Nights</div>
+            <ul class="pt-card-list">
+              <li>2-hr private cocktail event</li>
+              <li>5 Indian appetizers</li>
+              <li>Open bar</li>
+              <li>4-hr private banquet event</li>
+              <li>Indian buffet</li>
+              <li>Basic décor</li>
+              <li>3-night honeymoon stay</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <div class="pt-card-nights">240</div>
+            <div class="pt-card-sub">Room Nights</div>
+            <ul class="pt-card-list">
+              <li>3-hr private function</li>
+              <li>Indian buffet</li>
+              <li>Open bar</li>
+              <li>Basic décor</li>
+              <li>2-night honeymoon stay</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <div class="pt-card-nights">160</div>
+            <div class="pt-card-sub">Room Nights</div>
+            <ul class="pt-card-list">
+              <li>2-hr private banquet event</li>
+              <li>Indian buffet</li>
+              <li>Open bar</li>
+              <li>Basic décor</li>
+              <li>2-night honeymoon stay</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <div class="pt-card-nights">100</div>
+            <div class="pt-card-sub">Room Nights</div>
+            <ul class="pt-card-list">
+              <li>2-hr private cocktail event</li>
+              <li>5 Indian appetizers</li>
+              <li>Open bar</li>
+              <li>Basic décor</li>
+            </ul>
+          </div>
+          <div class="pt-card">
+            <div class="pt-card-nights">75</div>
+            <div class="pt-card-sub">Room Nights</div>
+            <ul class="pt-card-list">
+              <li>1-night honeymoon stay</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
