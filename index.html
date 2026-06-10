@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>DestinationPick × Palladium — South Asian Destination Weddings</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -22,10 +22,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --pink:#EEC6CE;--rose:#D4899A;--sage:#C5D5D6;
   --warm:#E0C99A;--taupe:#836C4E;--ink:#2B4140;
   --body:#567472;--faint:rgba(91,125,128,0.14);--mid:rgba(91,125,128,0.28);
+  /* Promo Custom Colors */
+  --promo-blue:#1A4DB7; --promo-light:#EFF4FF; --promo-orange:#F07A24;
+  
   --H:'Cormorant Garamond',Georgia,serif;
   --S:'Great Vibes',cursive;
   --U:'DM Sans',system-ui,sans-serif;
-  --SP:clamp(1.5rem,5vw,5rem);/* horizontal section padding */
+  --SP:clamp(1.5rem,5vw,5rem);
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--U);background:var(--ivory);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
@@ -50,22 +53,18 @@ img{display:block;max-width:100%}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
 .hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(20,30,31,0.72) 0%,rgba(20,30,31,0.42) 40%,rgba(20,30,31,0.42) 60%,rgba(20,30,31,0.82) 100%)}
-.hero-body{position:relative;z-index:2;width:100%;max-width:760px;padding:clamp(7.5rem,14vw,11rem) var(--SP) clamp(4rem,8vw,6rem);margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
-.hero-kicker{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#F2CDD5;margin-bottom:1.4rem;text-shadow:0 1px 12px rgba(0,0,0,0.7)}
+.hero-body{position:relative;z-index:2;width:100%;max-width:860px;padding:clamp(7.5rem,14vw,11rem) var(--SP) clamp(4rem,8vw,6rem);margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+.hero-kicker{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#F2CDD5;margin-bottom:1.4rem;text-shadow:0 1px 12px rgba(0,0,0,0.7)}
 .hero-kicker::before,.hero-kicker::after{content:'';width:18px;height:1px;background:rgba(242,205,213,0.5);flex-shrink:0}
-.hero-h1{font-family:var(--H);font-size:clamp(2.4rem,6vw,4.6rem);font-weight:600;line-height:1.07;color:#FFFDF8;text-shadow:0 2px 22px rgba(0,0,0,0.5);margin-bottom:0.2rem}
+.hero-h1{font-family:var(--H);font-size:clamp(2.4rem,5vw,4.2rem);font-weight:600;line-height:1.07;color:#FFFDF8;text-shadow:0 2px 22px rgba(0,0,0,0.5);margin-bottom:0.2rem}
 .hero-h1 em{display:block;font-style:italic;font-weight:500;color:var(--sage);font-size:0.88em}
 .h-rule{width:38px;height:1px;background:linear-gradient(to right,transparent,var(--rose),transparent);margin:1.4rem auto;flex-shrink:0}
-.hero-copy{font-size:clamp(0.92rem,1.4vw,1rem);font-weight:400;line-height:1.78;color:rgba(255,255,255,0.85);max-width:520px;margin-bottom:1.9rem;text-shadow:0 1px 10px rgba(0,0,0,0.4)}
-.hero-btns{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.6rem}
+.hero-copy{font-size:clamp(0.92rem,1.4vw,1rem);font-weight:400;line-height:1.78;color:rgba(255,255,255,0.85);max-width:620px;margin-bottom:1.9rem;text-shadow:0 1px 10px rgba(0,0,0,0.4)}
+.hero-btns{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
 .btn-p{background:var(--pink);color:var(--dark);padding:0.86rem 1.9rem;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;font-family:var(--U);transition:background .2s}
 .btn-p:hover{background:#fff}
 .btn-g{font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.84);background:none;border:none;border-bottom:1px solid rgba(242,205,213,0.45);padding-bottom:0.15rem;cursor:pointer;font-family:var(--U);transition:color .2s,border-color .2s}
 .btn-g:hover{color:#fff;border-color:var(--pink)}
-.hero-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(1rem,3.5vw,2.5rem);padding-top:1.8rem;border-top:1px solid rgba(242,205,213,0.2);width:100%}
-.hs{text-align:center}
-.hs-n{display:block;font-family:var(--H);font-size:clamp(1.5rem,2.8vw,1.9rem);font-weight:600;color:#FFFDF8;line-height:1}
-.hs-l{display:block;font-size:0.64rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.48);margin-top:0.28rem}
 .prop-tag{position:absolute;bottom:clamp(1rem,2.5vw,1.8rem);right:var(--SP);z-index:3;background:rgba(39,60,61,0.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.16);padding:0.5rem 0.9rem;border-radius:9px}
 .pt-name{font-family:var(--H);font-size:0.9rem;font-weight:500;color:#FFFDF8;display:block;line-height:1.2}
 .pt-loc{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--pink);margin-top:0.16rem;display:block}
@@ -79,15 +78,15 @@ img{display:block;max-width:100%}
 
 /* TRUST */
 .trust{background:var(--cream);padding:2.8rem var(--SP);border-bottom:1px solid var(--faint)}
-.trust-wrap{max-width:960px;margin:0 auto}
+.trust-wrap{max-width:1060px;margin:0 auto}
 .trust-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:2rem}
 .tn{text-align:center;padding:0.5rem 1rem;position:relative}
 .tn+.tn::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:42px;background:var(--mid)}
-.tn-n{display:block;font-family:var(--H);font-size:clamp(2rem,3.2vw,2.6rem);font-weight:600;color:var(--teal);line-height:1}
+.tn-n{display:block;font-family:var(--H);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;color:var(--teal);line-height:1}
 .tn-l{display:block;font-size:0.64rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--body);margin-top:0.5rem}
 .trust-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;padding-top:1.6rem;border-top:1px solid var(--faint)}
 .tb-lbl{font-size:0.64rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--taupe);display:block;margin-bottom:0.3rem}
-.tb-val{font-size:0.92rem;font-weight:500;color:var(--ink)}
+.tb-val{font-size:0.85rem;font-weight:500;color:var(--ink)}
 .trust-bottom div:last-child .tb-val{color:var(--teal)}
 
 /* SECTIONS */
@@ -103,10 +102,10 @@ img{display:block;max-width:100%}
 .sh em{font-style:italic;color:var(--teal);font-weight:500}.sh.lt{color:#FFFDF8}.sh.lt em{color:var(--sage)}
 .rl{display:block;width:30px;height:1.5px;background:var(--rose);margin:1.1rem 0}
 .rl.cx{margin:1.1rem auto}.rl.lt{background:rgba(238,198,206,0.4)}
-.bd{font-size:0.95rem;font-weight:400;line-height:1.8;color:var(--body);max-width:500px}
+.bd{font-size:0.95rem;font-weight:400;line-height:1.8;color:var(--body);max-width:600px}
 .bd.lt{color:rgba(255,255,255,0.68)}
 
-/* ABOUT */
+/* ABOUT / WHY GRID */
 .ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,5vw,4.5rem);align-items:center}
 .ab-imgs{position:relative;height:460px}
 .ab-main{position:absolute;top:0;left:0;width:70%;height:72%;overflow:hidden;border-radius:150px 150px 10px 10px;box-shadow:10px 14px 38px rgba(39,60,61,0.18)}
@@ -116,40 +115,61 @@ img{display:block;max-width:100%}
 .ab-pill{position:absolute;bottom:28%;right:-0.8rem;z-index:5;background:var(--ivory);padding:0.8rem 1rem;text-align:center;min-width:112px;border-radius:100px;box-shadow:4px 6px 18px rgba(39,60,61,0.14)}
 .ab-pill-n{display:block;font-family:var(--H);font-size:1.65rem;font-weight:600;color:var(--teal);line-height:1}
 .ab-pill-t{display:block;font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--body);margin-top:0.25rem}
-.ab-tags{display:flex;flex-wrap:wrap;gap:0.45rem;margin:1.2rem 0 1.6rem}
-.ab-tag{font-size:0.8rem;font-weight:500;color:var(--teal-d);padding:0.28rem 0.8rem;border:1px solid var(--mid);border-radius:100px}
 
-/* WHY */
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 3.5rem;margin-top:2.2rem}
 .wi{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1.3rem 0;border-bottom:1px solid var(--faint);align-items:start}
 .wi-n{width:38px;height:38px;border-radius:50%;background:var(--blush);border:1px solid var(--mid);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--H);font-size:0.95rem;font-weight:600;color:var(--teal)}
 .wi h4{font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:0.25rem}
 .wi p{font-size:0.83rem;font-weight:400;color:var(--body);line-height:1.72}
 
-/* ═══════════════════════════════════════
-   CARD SCROLL SECTIONS
-   Cards on desktop: grid
-   Cards on mobile: horizontal scroll with CONSISTENT padding
-   
-   KEY: scroll container uses padding (not margin hack)
-   so first and last card both get equal space
-═══════════════════════════════════════ */
-
-/* -- CEREMONIES -- */
+/* DESTINATIONS (CARD SCROLL) */
 .cer-sec-inner{margin-top:2.2rem;padding-top:8px;overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .cer-sec-inner::-webkit-scrollbar{display:none}
-.cer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.cer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .cer-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:13px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s,transform .25s}
 .cer-card:hover{border-color:var(--pink);transform:translateY(-3px)}
-.cer-img{height:155px;overflow:hidden;flex-shrink:0}
-.cer-img img{width:100%;height:155px;object-fit:cover;display:block;transition:transform .5s ease}
+.cer-img{height:180px;overflow:hidden;flex-shrink:0}
+.cer-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .cer-card:hover .cer-img img{transform:scale(1.05)}
-.cer-body{padding:1rem 1rem 1.2rem;flex:1}
+.cer-body{padding:1.5rem 1.2rem;flex:1}
 .cer-day{font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--pink);margin-bottom:0.28rem}
-.cer-name{font-family:var(--H);font-size:1.1rem;font-weight:500;color:#FFFDF8;margin-bottom:0.38rem}
-.cer-desc{font-size:0.8rem;font-weight:400;color:rgba(255,255,255,0.62);line-height:1.62}
+.cer-name{font-family:var(--H);font-size:1.4rem;font-weight:500;color:#FFFDF8;margin-bottom:0.38rem;line-height:1.1}
+.cer-desc{font-size:0.82rem;font-weight:400;color:rgba(255,255,255,0.7);line-height:1.62;margin-bottom:1rem}
+.cer-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:auto;border-top:1px solid rgba(255,255,255,0.1);padding-top:1rem}
+.cer-tag{font-size:0.7rem;color:var(--pink);background:rgba(255,255,255,0.05);padding:0.25rem 0.6rem;border-radius:100px}
 
-/* -- TESTIMONIALS -- */
+/* PROMOS (Group Incentives, Couple, Guest) */
+.promo-block{background:#fff;border-radius:15px;padding:2.5rem;box-shadow:0 8px 30px rgba(39,60,61,0.06);border:1px solid var(--faint);margin-bottom:3rem}
+.promo-header{margin-bottom:2rem;text-align:center;max-width:700px;margin-left:auto;margin-right:auto}
+.promo-lbl{font-size:0.68rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--promo-blue);margin-bottom:0.5rem;display:block}
+.promo-h{font-family:var(--H);font-size:2rem;font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:0.6rem}
+.promo-p{font-size:0.9rem;color:var(--body);line-height:1.6}
+.promo-note{display:block;font-size:0.7rem;color:var(--promo-orange);margin-top:0.8rem;font-weight:500}
+
+/* Promo 1 Table */
+.pt-table-wrap{overflow-x:auto;border:1px solid #E5E7EB;border-radius:10px;background:#FAFAFA}
+.ptable{width:100%;border-collapse:collapse;min-width:600px}
+.ptable th,.ptable td{padding:1.2rem;text-align:left;border-bottom:1px solid #E5E7EB}
+.ptable th{background:var(--promo-light);color:var(--promo-blue);font-size:0.85rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase}
+.ptable tr:last-child td{border-bottom:none}
+.ptable td{font-size:0.85rem;color:var(--ink);line-height:1.5}
+.pt-tier{font-weight:700;color:var(--promo-blue);white-space:nowrap}
+.pt-inc{color:var(--body)}
+
+/* Promo 2 Grid */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.pg-item{display:flex;align-items:center;gap:0.8rem;background:var(--promo-light);padding:1rem;border:1px solid #D1E0FF;border-radius:8px;transition:transform .2s}
+.pg-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(26,77,183,0.08)}
+.pg-icon{width:32px;height:32px;background:var(--promo-blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.pg-txt{font-size:0.82rem;font-weight:600;color:var(--promo-blue);line-height:1.3}
+
+/* Promo 3 Checklist */
+.pcheck{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.pc-item{display:flex;align-items:flex-start;gap:0.8rem;background:#FAFAFA;padding:1.2rem;border:1px solid #E5E7EB;border-radius:8px}
+.pc-icon{color:var(--promo-blue);font-size:1.2rem;flex-shrink:0;margin-top:-2px}
+.pc-txt{font-size:0.88rem;color:var(--ink);font-weight:500;line-height:1.4}
+
+/* TESTIMONIALS */
 .test-sec-inner{margin-top:2.2rem;padding-top:6px;overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .test-sec-inner::-webkit-scrollbar{display:none}
 .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
@@ -161,30 +181,6 @@ img{display:block;max-width:100%}
 .tc-av{width:36px;height:36px;border-radius:50%;flex-shrink:0;border:1.5px solid var(--pink);background:var(--blush);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:600;color:var(--teal)}
 .tc-nm{font-size:0.88rem;font-weight:600;color:var(--ink)}
 .tc-dt{font-size:0.7rem;color:var(--body);margin-top:0.1rem}
-
-/* -- PACKAGES -- */
-.pkg-sec-inner{margin-top:2.2rem;padding-top:1.4rem;overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.pkg-sec-inner::-webkit-scrollbar{display:none}
-.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;align-items:stretch}
-.pkg{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:15px;padding:1.9rem 1.6rem;box-shadow:0 5px 22px rgba(39,60,61,0.07);border:1px solid rgba(255,255,255,0.8);transition:transform .25s,box-shadow .25s}
-.pkg:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(39,60,61,0.12)}
-.pkg.feat{background:var(--dark);border-color:transparent;box-shadow:0 12px 36px rgba(39,60,61,0.24);padding-top:2.5rem}
-.pkg-badge{position:absolute;top:-0.85rem;left:50%;transform:translateX(-50%);background:var(--pink);color:var(--dark);font-size:0.64rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.36rem 1.05rem;border-radius:100px;white-space:nowrap;box-shadow:0 2px 10px rgba(39,60,61,0.2)}
-.pkg-tier{font-size:0.62rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--rose);margin-bottom:0.38rem}
-.pkg.feat .pkg-tier{color:var(--pink)}
-.pkg-name{font-family:var(--H);font-size:1.7rem;font-weight:600;color:var(--ink);line-height:1;margin-bottom:0.25rem}
-.pkg.feat .pkg-name{color:#FFFDF8}
-.pkg-sub{font-size:0.82rem;font-weight:400;color:var(--body);margin-bottom:0.95rem;padding-bottom:0.95rem;border-bottom:1px solid var(--faint);line-height:1.42}
-.pkg.feat .pkg-sub{color:rgba(238,198,206,0.7);border-color:rgba(255,255,255,0.1)}
-.pkg-list{list-style:none;margin-bottom:1.4rem;flex:1}
-.pkg-list li{display:flex;align-items:flex-start;gap:0.5rem;font-size:0.85rem;font-weight:400;color:var(--body);margin-bottom:0.5rem;line-height:1.48}
-.pkg.feat .pkg-list li{color:rgba(255,255,255,0.74)}
-.pkg-list li::before{content:'✦';color:var(--rose);font-size:0.5rem;margin-top:0.27rem;flex-shrink:0}
-.pkg.feat .pkg-list li::before{color:var(--pink)}
-.pkg-btn{width:100%;padding:0.78rem;border-radius:100px;font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:var(--U);border:1.5px solid var(--teal);background:transparent;color:var(--teal);transition:background .2s,color .2s}
-.pkg-btn:hover{background:var(--teal);color:#fff}
-.pkg.feat .pkg-btn{background:var(--pink);border-color:var(--pink);color:var(--dark)}
-.pkg.feat .pkg-btn:hover{background:#fff;border-color:#fff}
 
 /* FORM */
 .form-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,5vw,4rem);align-items:start}
@@ -204,20 +200,6 @@ img{display:block;max-width:100%}
 .fg input::placeholder{color:rgba(255,255,255,0.26)}
 .fg select option{background:var(--dark)}
 .fg-row{display:grid;grid-template-columns:1fr 1fr;gap:0.65rem}
-.ck-lbl{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--pink);margin-bottom:0.4rem;display:block}
-.ck-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.25rem 0.5rem;margin-bottom:0.3rem}
-.ck{display:flex;align-items:center;gap:0.42rem;cursor:pointer;font-size:0.84rem;font-weight:400;color:rgba(255,255,255,0.76)}
-.ck input{display:none}
-.ck-box{width:14px;height:14px;border-radius:3px;flex-shrink:0;border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;transition:all .14s}
-.ck input:checked~.ck-box{background:var(--pink);border-color:var(--pink)}
-.ck input:checked~.ck-box::after{content:'✓';font-size:0.52rem;color:var(--dark);font-weight:700}
-.b-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.38rem}
-.b-lbl{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--pink)}
-.b-val{font-family:var(--H);font-size:1.15rem;font-weight:600;color:#FFFDF8}
-input[type=range]{width:100%;-webkit-appearance:none;height:2px;border-radius:2px;outline:none;border:none;cursor:pointer;background:linear-gradient(to right,var(--pink) 50%,rgba(255,255,255,0.13) 50%)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;background:var(--pink);border-radius:50%;cursor:pointer;border:2px solid rgba(255,255,255,0.5)}
-.b-mm{display:flex;justify-content:space-between;margin-top:0.22rem}
-.b-mm span{font-size:0.6rem;color:rgba(255,255,255,0.26)}
 .f-btn{width:100%;background:var(--pink);color:var(--dark);padding:0.88rem;border-radius:100px;font-size:0.74rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;font-family:var(--U);margin-top:0.75rem;transition:background .2s}
 .f-btn:hover{background:#fff}
 .f-trust{text-align:center;font-size:0.66rem;color:rgba(255,255,255,0.28);margin-top:0.5rem;line-height:1.6}
@@ -248,12 +230,11 @@ section,.trust,.ticker,.footer,.nav-wrap{opacity:1!important;transform:none!impo
   .nav-logo{height:23px}
 
   .hero-body{padding:7.5rem var(--SP) 3.2rem}
-  .hero-h1{font-size:clamp(2rem,9vw,2.7rem)}
+  .hero-h1{font-size:clamp(2.1rem,9vw,2.7rem)}
   .hero-copy{font-size:0.92rem;max-width:100%}
   .hero-btns{flex-direction:column;align-items:stretch;gap:0.7rem;margin-bottom:1.8rem;max-width:280px;margin-left:auto;margin-right:auto}
   .btn-p,.btn-g{width:100%;text-align:center;display:block;padding:0.86rem 1.5rem}
-  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem 0.5rem;padding-top:1.5rem}
-  .hs-n{font-size:1.38rem}
+  
   .prop-tag{bottom:auto;top:clamp(5rem,10vw,7rem);right:var(--SP);padding:0.4rem 0.75rem}
   .pt-name{font-size:0.82rem}.pt-loc{font-size:0.58rem}
 
@@ -266,24 +247,17 @@ section,.trust,.ticker,.footer,.nav-wrap{opacity:1!important;transform:none!impo
   .ab-imgs{height:260px}.ab-pill{display:none}
   .why-grid{grid-template-columns:1fr;gap:0}
 
-  /* ─────────────────────────────────────
-     MOBILE CARD SCROLLERS + SCALE ANIMATION
-  ───────────────────────────────────── */
+  .promo-block{padding:1.5rem;margin-bottom:1.5rem}
+  .pgrid{grid-template-columns:repeat(2,1fr);gap:0.6rem}
+  .pcheck{grid-template-columns:1fr}
 
-  #ceremonies,#stories,#packages{
-    padding-left:0;padding-right:0;
-  }
-  #ceremonies .wrap,#stories .wrap,#packages .wrap{
-    padding-left:1.25rem;padding-right:1.25rem;
-  }
-  #ceremonies .rv:last-child{
-    padding-left:1.25rem;padding-right:1.25rem;
-  }
+  #destinations,#stories{padding-left:0;padding-right:0;}
+  #destinations .wrap,#stories .wrap{padding-left:1.25rem;padding-right:1.25rem;}
+  #destinations .rv:last-child{padding-left:1.25rem;padding-right:1.25rem;}
 
-  .cer-sec-inner,.test-sec-inner,.pkg-sec-inner{
+  .cer-sec-inner,.test-sec-inner{
     margin-left:0;margin-right:0;
-    padding-left:1.25rem;
-    padding-right:0;
+    padding-left:1.25rem;padding-right:0;
     padding-top:16px;padding-bottom:16px;
     overflow-x:auto;overflow-y:visible;
     scroll-snap-type:x mandatory;
@@ -291,39 +265,25 @@ section,.trust,.ticker,.footer,.nav-wrap{opacity:1!important;transform:none!impo
     scrollbar-width:none;
   }
   .cer-sec-inner::-webkit-scrollbar,
-  .test-sec-inner::-webkit-scrollbar,
-  .pkg-sec-inner::-webkit-scrollbar{display:none}
+  .test-sec-inner::-webkit-scrollbar{display:none}
 
-  .cer-grid,.test-grid,.pkg-grid{
+  .cer-grid,.test-grid{
     display:flex;flex-direction:row;
-    gap:0.85rem;align-items:center;
+    gap:0.85rem;align-items:stretch;
     padding-right:1.25rem;
   }
 
-  /* Default state — side cards slightly scaled down */
-  .cer-card,.tcard,.pkg{
+  .cer-card,.tcard{
     transition:transform .3s ease, opacity .3s ease, box-shadow .3s ease;
-    transform:scale(0.92);
-    opacity:0.72;
+    transform:scale(0.92);opacity:0.72;
   }
-  /* Active/center card — full size */
-  .cer-card.is-active,.tcard.is-active,.pkg.is-active{
-    transform:scale(1);
-    opacity:1;
+  .cer-card.is-active,.tcard.is-active{
+    transform:scale(1);opacity:1;
     box-shadow:0 12px 36px rgba(39,60,61,0.28);
   }
 
-  .cer-sec-inner{padding-top:16px}
-  .cer-card{width:74vw;flex-shrink:0;scroll-snap-align:center;overflow:hidden}
-  .cer-img{height:155px}
-  .cer-img img{height:155px}
-  .cer-body{padding:1.1rem 1rem 1.2rem}
-
-  .test-sec-inner{padding-top:12px}
+  .cer-card{width:80vw;flex-shrink:0;scroll-snap-align:center;overflow:hidden}
   .tcard{width:78vw;flex-shrink:0;scroll-snap-align:center;padding:1.5rem 1.3rem}
-
-  .pkg-sec-inner{padding-top:1.4rem}
-  .pkg{width:76vw;flex-shrink:0;scroll-snap-align:center;padding:1.7rem 1.4rem}
 
   .form-wrap{grid-template-columns:1fr;gap:1.8rem}
   .flhs .bd{max-width:100%}
@@ -332,20 +292,14 @@ section,.trust,.ticker,.footer,.nav-wrap{opacity:1!important;transform:none!impo
   .recv-lbl,.recv-list{font-size:0.82rem}
 }
 
-@media(max-width:420px){
-  .hero-stats{gap:0.6rem 0.8rem}
-  .cer-card{width:80vw}
-  .tcard{width:83vw}
-  .pkg{width:82vw}
-}
-
 @media(min-width:769px) and (max-width:1080px){
   .ab-grid{grid-template-columns:1fr;gap:2.5rem}
   .ab-imgs{height:300px}.ab-pill{display:none}
   .test-grid{grid-template-columns:1fr 1fr}
-  .pkg-grid{grid-template-columns:1fr 1fr}
   .form-wrap{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr}
+  .cer-grid{grid-template-columns:1fr 1fr}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -364,8 +318,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <ul class="nav-links">
       <li><a href="#why">Why Palladium</a></li>
-      <li><a href="#ceremonies">Ceremonies</a></li>
-      <li><a href="#stories">Love Stories</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#stories">Guest Stories</a></li>
       <li><a href="#packages">Packages</a></li>
     </ul>
     <button class="nav-cta" onclick="go('consult')">Book Consultation</button>
@@ -373,46 +327,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <section class="hero">
-  <div class="hero-bg"><img src="images/banner.jpg.jpg" alt="Indian beach wedding"/></div>
+  <div class="hero-bg"><img src="images/banner.jpg.jpg" alt="Grand South Asian Celebration"/></div>
   <div class="hero-ov"></div>
   <div class="hero-body rv">
-    <span class="hero-kicker">The Caribbean's Premier Destinations for South Asian Weddings</span>
-    <h1 class="hero-h1">Big Enough for Every Guest.<br/>Warm Enough to Feel Like It Was</h1>
+    <span class="hero-kicker">Where Grand South Asian Celebrations Come to Life Across Mexico's Most Iconic Destinations</span>
+    <h1 class="hero-h1">Big Enough for Every Guest.<br/><em>Warm Enough to Feel Like It Was Made Just for You.</em></h1>
     <div class="h-rule"></div>
-    <p class="hero-copy">Your family flew in from everywhere to be here. At Palladium's resorts across Mexico, the Caribbean, and Jamaica, every ritual the Baraat, the mandap, the Sangeet is designed to feel exactly the way your mother always imagined it.</p>
+    <p class="hero-copy">Every celebration tells a story, and at Palladium's resorts across Mexico's most breathtaking backdrops, we make sure yours is told beautifully. We don't just host your wedding, we honor your traditions, your rituals, and the moments that matter most to you.<br><br>Luxury, grand capacity, and meticulous attention to detail come together seamlessly here, so you can welcome hundreds of your loved ones without ever losing that warmth and personal touch.</p>
     <div class="hero-btns">
       <button class="btn-p" onclick="go('consult')">Book Your Free Consultation Today</button>
-      <button class="btn-g" onclick="go('why')">See What Your Big Day Could Look Like</button>
-    </div>
-    <div class="hero-stats">
-      <div class="hs"><span class="hs-n">500+</span><span class="hs-l">Real Weddings</span></div>
-      <div class="hs"><span class="hs-n">30+ Years</span><span class="hs-l">Operating History</span></div>
-      <div class="hs"><span class="hs-n">20,000+</span><span class="hs-l">Guests Hosted</span></div>
-      <div class="hs"><span class="hs-n">Certified</span><span class="hs-l">SA Wedding Concierge</span></div>
+      <button class="btn-g" onclick="go('destinations')">See What Your Palladium Wedding Could Look Like</button>
     </div>
   </div>
-  <div class="prop-tag"><span class="pt-name">Dreams Macao Beach</span><span class="pt-loc">Punta Cana, DR</span></div>
+  <div class="prop-tag"><span class="pt-name">Palladium Hotel Group</span><span class="pt-loc">Mexico</span></div>
 </section>
-
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-inner">
-    <span class="tk">Mehndi</span><span class="tk-dot">✦</span><span class="tk">Haldi</span><span class="tk-dot">✦</span><span class="tk">Sangeet</span><span class="tk-dot">✦</span><span class="tk">Baraat</span><span class="tk-dot">✦</span><span class="tk">Sacred Vows</span><span class="tk-dot">✦</span><span class="tk">Reception</span><span class="tk-dot">✦</span><span class="tk">South Asian Cuisine</span><span class="tk-dot">✦</span><span class="tk">Beachfront Ceremonies</span><span class="tk-dot">✦</span>
-    <span class="tk">Mehndi</span><span class="tk-dot">✦</span><span class="tk">Haldi</span><span class="tk-dot">✦</span><span class="tk">Sangeet</span><span class="tk-dot">✦</span><span class="tk">Baraat</span><span class="tk-dot">✦</span><span class="tk">Sacred Vows</span><span class="tk-dot">✦</span><span class="tk">Reception</span><span class="tk-dot">✦</span><span class="tk">South Asian Cuisine</span><span class="tk-dot">✦</span><span class="tk">Beachfront Ceremonies</span><span class="tk-dot">✦</span>
-  </div>
-</div>
 
 <div class="trust rv">
   <div class="trust-wrap">
+    <div style="text-align:center;margin-bottom:1.5rem"><span class="ew cx">Trusted By The World's Leading Wedding & Luxury Media</span></div>
     <div class="trust-nums">
-      <div class="tn"><span class="tn-n">40+</span><span class="tn-l">Luxury Resorts</span></div>
-      <div class="tn"><span class="tn-n">8</span><span class="tn-l">Tropical Destinations</span></div>
-      <div class="tn"><span class="tn-n">500+</span><span class="tn-l">Grand Guest Capacity</span></div>
-      <div class="tn"><span class="tn-n">100%</span><span class="tn-l">In-House Specialty Teams</span></div>
+      <div class="tn"><span class="tn-n">300+</span><span class="tn-l">Grand Guest Capacity</span></div>
+      <div class="tn"><span class="tn-n">3</span><span class="tn-l">Iconic Mexican Destinations</span></div>
+      <div class="tn"><span class="tn-n">Multi-Day</span><span class="tn-l">South Asian Celebrations</span></div>
+      <div class="tn"><span class="tn-n">100%</span><span class="tn-l">In-House Specialist Teams</span></div>
     </div>
     <div class="trust-bottom">
-      <div><span class="tb-lbl">Industry Accreditations</span><span class="tb-val">Fully TICO Certified &nbsp;✦&nbsp; IATAN Certified Agency</span></div>
+      <div><span class="tb-lbl">Industry Accreditations</span><span class="tb-val">Fully IATAN Certified &nbsp;✦&nbsp; TICO Certified</span></div>
       <div><span class="tb-lbl">As Featured In</span><span class="tb-val">Vogue · Condé Nast Traveler · BRIDES · WedLuxe · Maharani Weddings</span></div>
     </div>
+  </div>
+</div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="tk">Cultural Ceremonies</span><span class="tk-dot">✦</span><span class="tk">Music & Dance Nights</span><span class="tk-dot">✦</span><span class="tk">Grand Entrance</span><span class="tk-dot">✦</span><span class="tk">Beachfront Vows</span><span class="tk-dot">✦</span><span class="tk">Sunset Reception</span><span class="tk-dot">✦</span><span class="tk">South Asian Cuisine</span><span class="tk-dot">✦</span><span class="tk">Oceanfront Celebrations</span><span class="tk-dot">✦</span>
+    <span class="tk">Cultural Ceremonies</span><span class="tk-dot">✦</span><span class="tk">Music & Dance Nights</span><span class="tk-dot">✦</span><span class="tk">Grand Entrance</span><span class="tk-dot">✦</span><span class="tk">Beachfront Vows</span><span class="tk-dot">✦</span><span class="tk">Sunset Reception</span><span class="tk-dot">✦</span><span class="tk">South Asian Cuisine</span><span class="tk-dot">✦</span><span class="tk">Oceanfront Celebrations</span><span class="tk-dot">✦</span>
   </div>
 </div>
 
@@ -421,122 +370,229 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="ab-imgs rv">
       <div class="ab-main"><img src="images/reception.jpg.jpg" alt="Wedding reception" loading="lazy"/></div>
       <div class="ab-accent"><img src="images/Hindu.jpg.jpg" alt="Haldi ceremony" loading="lazy"/></div>
-      <div class="ab-pill"><span class="ab-pill-n">100%</span><span class="ab-pill-t">In-House Teams</span></div>
     </div>
     <div class="rv">
-      <span class="ew">The Palladium South Asian Wedding Experience</span>
-      <h2 class="sh">Everything Your Celebration Needs</h2>
+      <span class="ew">Why Palladium Hotel Group?</span>
+      <h2 class="sh">The South Asian Wedding Experience</h2>
       <div class="rl"></div>
-      <p class="bd">A South Asian wedding has a rhythm that takes years to really understand. Palladium's programme was built around exactly that — with in-house specialists who work exclusively on Hindu, Sikh, and Muslim celebrations, and who know that the timing of a ceremony matters just as much as how it looks.</p>
-      <p class="bd" style="margin-top:0.8rem">No outsourced coordinators. No generic timelines. Just people who understand the difference between a Punjabi Baraat and a South Indian ceremony, and who have planned hundreds of each.</p>
-      <div class="ab-tags" style="margin-top:1.2rem">
-        <span class="ab-tag">Authentic South Asian Cuisine</span>
-        <span class="ab-tag">Dedicated Wedding Team</span>
-        <span class="ab-tag">Multi-Day Ceremonies</span>
-        <span class="ab-tag">500+ Guest Capacity</span>
-        <span class="ab-tag">8 Luxury Destinations</span>
-      </div>
-      <button class="btn-p" style="background:var(--teal)" onclick="go('consult')">Book a Free Consultation</button>
+      <p class="bd">Part of one of the world's most experienced all-inclusive hospitality groups — with the infrastructure, scale, and cultural expertise to deliver South Asian weddings at their grandest.</p>
+      <button class="btn-p" style="background:var(--teal);margin-top:1.5rem" onclick="go('consult')">Book a Free Consultation</button>
     </div>
+  </div>
+  
+  <div class="wrap why-grid rv">
+    <div class="wi"><div class="wi-n">01</div><div><h4>Dedicated South Asian Wedding Team</h4><p>In-house experts who understand the intricate flow, sacred rituals, and timing demands of multi-day South Asian wedding programmes.</p></div></div>
+    <div class="wi"><div class="wi-n">02</div><div><h4>Authentic South Asian Cuisine</h4><p>Specialized culinary networks providing custom Punjabi, Gujarati, and South Indian menus with strict vegetarian, vegan, and certified halal safety profiles.</p></div></div>
+    <div class="wi"><div class="wi-n">03</div><div><h4>Full Multi-Day Strategy</h4><p>End-to-end timeline tracking for your wedding events and ceremonies - all coordinated under one team.</p></div></div>
+    <div class="wi"><div class="wi-n">04</div><div><h4>Custom Ceremony Structures & Décor</h4><p>Tailored ceremony spaces, luxury floral installations, seaside builds, and intentional cultural styling.</p></div></div>
+    <div class="wi"><div class="wi-n">05</div><div><h4>500+ Guest Capacity</h4><p>Purpose-built grand-event infrastructure to accommodate the full scale of South Asian celebrations without compromise.</p></div></div>
+    <div class="wi"><div class="wi-n">06</div><div><h4>Group Travel Logistics</h4><p>Custom room blocks, flight tracking, and luxury airport transfers managed for 50 to 500+ international arrivals.</p></div></div>
   </div>
 </section>
 
-<section class="sec s-bl">
+<section class="sec s-cr" id="value">
   <div class="wrap">
-    <div class="rv" style="text-align:center;max-width:540px;margin:0 auto">
-      <span class="ew cx">Why Palladium</span>
-      <span class="sc" style="text-align:center">All in one place</span>
-      <h2 class="sh" style="text-align:center">The South Asian Wedding <em>Experience</em></h2>
+    <div class="rv" style="text-align:center;max-width:700px;margin:0 auto">
+      <span class="ew cx">THE SOUL OF MEXICO'S MOST CELEBRATED COASTLINES</span>
+      <h2 class="sh" style="text-align:center">Destinations Built for <em>Grand South Asian Celebrations</em></h2>
       <div class="rl cx"></div>
+      <p class="bd" style="margin:0 auto">Mexico's most distinguished all-inclusive resorts, offering spectacular beachfront venues, immersive South Asian wedding programming, and luxury hospitality for every guest.</p>
     </div>
-    <div class="why-grid rv">
-      <div class="wi"><div class="wi-n">01</div><div><h4>Dedicated South Asian Wedding Team</h4><p>In-house experts who understand the intricate flow, sacred rituals, and timing demands of multi-day weddings.</p></div></div>
-      <div class="wi"><div class="wi-n">02</div><div><h4>Authentic South Asian Cuisine</h4><p>Specialized culinary networks providing custom Punjabi, Gujarati, and South Indian menus with strict vegetarian, vegan, and certified halal safety profiles.</p></div></div>
-      <div class="wi"><div class="wi-n">03</div><div><h4>Full Multi-Day Strategy</h4><p>End-to-end timeline tracking for your Mehndi, Haldi, Sangeet, Baraat, Ceremony, and Reception events.</p></div></div>
-      <div class="wi"><div class="wi-n">04</div><div><h4>Bespoke Mandap and Décor Design</h4><p>Customized mandap configurations, luxury floral installations, seaside builds, and intentional cultural styling.</p></div></div>
-      <div class="wi"><div class="wi-n">05</div><div><h4>8 Iconic Destinations</h4><p>Elite properties situated across Riviera Maya, Punta Cana, Jamaica, and beyond.</p></div></div>
-      <div class="wi"><div class="wi-n">06</div><div><h4>Group Travel Logistics</h4><p>Seamless control over custom room blocks, flight tracking, and luxury airport shuttles for 50 to 500+ international arrivals.</p></div></div>
+    <div class="why-grid rv" style="grid-template-columns:1fr;max-width:800px;margin-left:auto;margin-right:auto">
+      <div class="wi"><div class="wi-n" style="background:#fff">✦</div><div><h4>Iconic Coastal Backdrops</h4><p>Caribbean and Pacific beachfront landscapes across three distinct Mexican settings, each designed for elevated ceremonies.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">✦</div><div><h4>All-Inclusive Excellence</h4><p>Palladium's all-inclusive model means your guests never worry about extras — every meal, every drink, every experience is included.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">✦</div><div><h4>Authentic Mexican Warmth</h4><p>A destination celebrated for gracious service, vibrant culture, and an energy that perfectly complements South Asian celebrations.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">✦</div><div><h4>Easy International Travel</h4><p>Direct flights to Cancún and Puerto Vallarta from major North American and international cities.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">✦</div><div><h4>Year-Round Perfect Climate</h4><p>Sun-drenched tropical and Pacific warmth ideal for multi-day outdoor wedding events any time of year.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="sec s-dk" id="ceremonies">
+<section class="sec s-dk" id="destinations">
   <div class="wrap">
     <div class="rv" style="text-align:center;max-width:640px;margin:0 auto">
-      <span class="ew lt cx">How Your Wedding Days Take Shape</span>
-      <h2 class="sh lt" style="text-align:center">Everything That Matters, In The Most Beautiful Wedding Destination</h2>
+      <span class="ew lt cx">Three Destinations. One Wedding Standard.</span>
+      <h2 class="sh lt" style="text-align:center">Three iconic Palladium properties, each delivering the same complete framework.</h2>
       <div class="rl cx lt"></div>
     </div>
   </div>
-  <!-- scroll container OUTSIDE .wrap so padding works correctly on mobile -->
+  
   <div class="cer-sec-inner rv">
     <div class="cer-grid">
       <div class="cer-card">
-        <div class="cer-img"><img src="images/banner.jpg.jpg" alt="Haldi and Mehndi" loading="lazy"/></div>
-        <div class="cer-body"><div class="cer-day">Day One</div><div class="cer-name">Welcome, Haldi and Mehndi</div><div class="cer-desc">The first day is really just about arriving. The Haldi ceremony happens the way it always does — messy, loud, and over too quickly. Then the Mehndi night, where the evening stretches out and nobody's in a rush yet.</div></div>
+        <div class="cer-img"><img src="images/banner.jpg.jpg" alt="Costa Mujeres, México" loading="lazy"/></div>
+        <div class="cer-body">
+          <div class="cer-day">Grand Palladium Select Costa Mujeres</div>
+          <div class="cer-name">Costa Mujeres, México</div>
+          <div class="cer-desc">Modern luxury for large South Asian wedding groups, offering multi-event venues, the highest guest capacity in the programme, and a contemporary all-inclusive experience. Situated in the exclusive Costa Mujeres corridor, north of Cancún.</div>
+          <div class="cer-tags">
+            <span class="cer-tag">Large weddings</span><span class="cer-tag">Multi-generational</span><span class="cer-tag">Premium Indian</span>
+          </div>
+        </div>
       </div>
+      
       <div class="cer-card">
-        <div class="cer-img"><img src="images/Sangeet.jpg.jpg" alt="Sangeet night" loading="lazy"/></div>
-        <div class="cer-body"><div class="cer-day">Day Two</div><div class="cer-name">The High-Energy Sangeet</div><div class="cer-desc">An unforgettable evening of choreographed Bollywood performances, custom lighting setups, live entertainment, and a proper spread — held across our beachfront venues.</div></div>
+        <div class="cer-img"><img src="images/Sangeet.jpg.jpg" alt="Riviera Maya / Cancún, Mexico" loading="lazy"/></div>
+        <div class="cer-body">
+          <div class="cer-day">Grand Palladium Select White Sand</div>
+          <div class="cer-name">Riviera Maya / Cancún</div>
+          <div class="cer-desc">Caribbean beachfront at one of the region’s most recognized destination addresses, with exceptional capacity to host grand Indian weddings and traditional multi-day events. Convenient international accessibility.</div>
+          <div class="cer-tags">
+            <span class="cer-tag">Culinary programmes</span><span class="cer-tag">Caribbean beachfront</span><span class="cer-tag">Large guest lists</span>
+          </div>
+        </div>
       </div>
+      
       <div class="cer-card">
-        <div class="cer-img"><img src="images/Hindu.jpg.jpg" alt="Hindu Wedding" loading="lazy"/></div>
-        <div class="cer-body"><div class="cer-day">Day Four</div><div class="cer-name">Hindu Wedding Ceremony</div><div class="cer-desc">A breathtaking beachfront procession with full dhol band leads directly into sacred vows at a beautiful floral mandap. The moment your family has been waiting for.</div></div>
+        <div class="cer-img"><img src="images/Hindu.jpg.jpg" alt="Puerto Vallarta, Mexico" loading="lazy"/></div>
+        <div class="cer-body">
+          <div class="cer-day">Grand Palladium Vallarta Resort & Spa</div>
+          <div class="cer-name">Puerto Vallarta, Mexico</div>
+          <div class="cer-desc">Pacific Ocean scenery and dramatic coastal landscapes come together for a romantic, sophisticated atmosphere. A distinct alternative to the Cancún corridor, ideal for boutique and mid-sized luxury celebrations.</div>
+          <div class="cer-tags">
+            <span class="cer-tag">Pacific Coast</span><span class="cer-tag">Boutique luxury</span><span class="cer-tag">Intimate to mid-sized</span>
+          </div>
+        </div>
       </div>
-      <div class="cer-card">
-        <div class="cer-img"><img src="images/reception.jpg.jpg" alt="Grand reception" loading="lazy"/></div>
-        <div class="cer-body"><div class="cer-day">Day Four</div><div class="cer-name">Grand Reception</div><div class="cer-desc">Then dinner, toasts, dancing, and the kind of ending that takes a while to come because no one quite wants to leave.</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="rv" style="text-align:center;margin-top:2.5rem;padding:0 var(--SP)">
-    <p style="font-family:var(--H);font-style:italic;font-size:clamp(1rem,1.8vw,1.12rem);font-weight:500;color:rgba(255,255,255,0.7);max-width:460px;margin:0 auto;line-height:1.62">We handle the planning for your multi-day Indian wedding. You take care of being there.</p>
-  </div>
-</section>
-
-<section class="sec s-sg" id="stories">
-  <div class="wrap">
-    <div class="rv" style="text-align:center;max-width:520px;margin:0 auto">
-      <span class="ew lt cx">Stories of Celebration</span>
-      <h2 class="sh lt" style="text-align:center">Stories of Celebration</h2>
-      <div class="rl cx lt"></div>
-    </div>
-  </div>
-  <div class="test-sec-inner rv">
-    <div class="test-grid">
-      <div class="tcard"><div class="tc-stars">★★★★★</div><div class="tc-q">"</div><p class="tc-text">Every ritual felt understood and perfectly executed. It was beyond anything we imagined.</p><div class="tc-foot"><div class="tc-av">SH</div><div><div class="tc-nm">Simran and Harpreet Singh</div><div class="tc-dt">Riviera Maya · 280 guests</div></div></div></div>
-      <div class="tcard"><div class="tc-stars">★★★★★</div><div class="tc-q">"</div><p class="tc-text">The wedding altar on the beach was breathtaking. Everything ran effortlessly from start to finish.</p><div class="tc-foot"><div class="tc-av">AV</div><div><div class="tc-nm">Ananya and Vikram Patel</div><div class="tc-dt">Jamaica · 320 guests</div></div></div></div>
-      <div class="tcard"><div class="tc-stars">★★★★★</div><div class="tc-q">"</div><p class="tc-text">We never had to worry about anything. The food, planning, and guest experience were flawless throughout.</p><div class="tc-foot"><div class="tc-av">NO</div><div><div class="tc-nm">Nadia and Omar Sheikh</div><div class="tc-dt">Punta Cana · 240 guests</div></div></div></div>
     </div>
   </div>
 </section>
 
 <section class="sec s-iv" id="packages">
   <div class="wrap">
-    <div class="rv" style="text-align:center;max-width:520px;margin:0 auto">
-      <span class="ew cx">Wedding Collections</span>
-      <h2 class="sh" style="text-align:center">Find the Right Package for <em>Your Celebration</em></h2>
+    <div class="rv" style="text-align:center;max-width:700px;margin:0 auto;margin-bottom:3rem">
+      <span class="ew cx" style="color:var(--promo-orange)">Wedding Rewards & Guest Benefits</span>
+      <h2 class="sh" style="text-align:center">The More You Celebrate Together, <br><em>The More Palladium Gives Back.</em></h2>
       <div class="rl cx"></div>
+      <p class="bd" style="margin:0 auto">Palladium is designed to deliver exceptional value at every stage of your celebration. Explore the advantages available for you, your guests, and your wedding experience.</p>
+    </div>
+
+    <!-- Promo 1: Group Incentives -->
+    <div class="promo-block rv">
+      <div class="promo-header">
+        <span class="promo-lbl">Group Incentives</span>
+        <h3 class="promo-h">Your Guest List Is Your Greatest Asset. Here's What It Unlocks.</h3>
+        <p class="promo-p">Every guest attending your celebration contributes to something greater. Through Palladium's room-night incentive program, larger celebrations can unlock exclusive wedding enhancements.</p>
+        <span class="promo-note">⚠ All tiers to be verified with Palladium Hotel Group before publishing.</span>
+      </div>
+      <div class="pt-table-wrap">
+        <table class="ptable">
+          <thead>
+            <tr>
+              <th style="width:25%">Room Nights</th>
+              <th>What Your Wedding Unlocks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pt-tier">500+ nights</td>
+              <td class="pt-inc">4-hr private cocktail event • 8-hr private banquet event • Venue flexibility • Beach ceremony • 3-night honeymoon stay • Moonlight dinner</td>
+            </tr>
+            <tr>
+              <td class="pt-tier">400 nights</td>
+              <td class="pt-inc">3-hr private cocktail event • 4-hr private banquet event • Venue selection flexibility • Beach ceremony option • 3-night honeymoon stay • Moonlight dinner</td>
+            </tr>
+            <tr>
+              <td class="pt-tier">300 nights</td>
+              <td class="pt-inc">2-hr private cocktail event • 5 Indian appetizers • Open bar • 4-hr private banquet event • Indian buffet • Basic décor • 3-night honeymoon stay</td>
+            </tr>
+            <tr>
+              <td class="pt-tier">240 nights</td>
+              <td class="pt-inc">3-hr private function • Indian buffet • Open bar • Basic décor • 2-night honeymoon stay</td>
+            </tr>
+            <tr>
+              <td class="pt-tier">160 nights</td>
+              <td class="pt-inc">2-hr private banquet event • Indian buffet • Open bar • Basic décor • 2-night honeymoon stay</td>
+            </tr>
+            <tr>
+              <td class="pt-tier">100 nights</td>
+              <td class="pt-inc">2-hr private cocktail event • 5 Indian appetizers • Open bar • Basic décor</td>
+            </tr>
+            <tr>
+              <td class="pt-tier">75 nights</td>
+              <td class="pt-inc">1-night honeymoon stay</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Promo 2: Couple Benefits -->
+    <div class="promo-block rv">
+      <div class="promo-header">
+        <span class="promo-lbl">What Every Couple Receives</span>
+        <h3 class="promo-h">Before You Add Anything, This Is Already Yours.</h3>
+        <p class="promo-p">Every Palladium wedding couple receives the following benefits as standard, included with your celebration, regardless of package size. <em>(These benefits are in addition to anything your room-night production unlocks).</em></p>
+      </div>
+      <div class="pgrid">
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Dedicated Wedding Coordinator</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Wedding Planning Assistance</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Private Group Check-In</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Wedding Couple Room Upgrade</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Welcome Gift on Arrival</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Romantic Turndown Service</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Romantic Breakfast In Bed</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Sparkling Wine & Fruit</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Complimentary Hydrotherapy</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">15% Spa Discount</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Complimentary Menu Tasting</span></div>
+        <div class="pg-item"><div class="pg-icon">✓</div><span class="pg-txt">Early Check-In & Late Check-Out</span></div>
+      </div>
+    </div>
+
+    <!-- Promo 3: Guest Perks -->
+    <div class="promo-block rv" style="margin-bottom:0">
+      <div class="promo-header">
+        <span class="promo-lbl">For Your Guests</span>
+        <h3 class="promo-h">The People You Bring Deserve the Same Care You're Getting.</h3>
+        <p class="promo-p">When your family and friends book as part of your wedding group, they don't just get a room, they get an experience that reflects the occasion. Your guests flew from different cities to celebrate you. We make sure they feel looked after.</p>
+      </div>
+      <div class="pcheck">
+        <div class="pc-item"><div class="pc-icon">✓</div><div class="pc-txt">Group rates available for stays before and after the wedding dates</div></div>
+        <div class="pc-item"><div class="pc-icon">✓</div><div class="pc-txt">Welcome drink on arrival</div></div>
+        <div class="pc-item"><div class="pc-icon">✓</div><div class="pc-txt">Private group check-in</div></div>
+        <div class="pc-item"><div class="pc-icon">✓</div><div class="pc-txt">Complimentary Wi-Fi throughout their stay</div></div>
+        <div class="pc-item"><div class="pc-icon">✓</div><div class="pc-txt">Complimentary room incentives for qualifying group sizes</div></div>
+        <div class="pc-item"><div class="pc-icon">✓</div><div class="pc-txt">Room category upgrades where available</div></div>
+        <div class="pc-item"><div class="pc-icon">✓</div><div class="pc-txt">Agency support benefits</div></div>
+      </div>
     </div>
   </div>
-  <div class="pkg-sec-inner rv">
-    <div class="pkg-grid">
-      <div class="pkg">
-        <div class="pkg-tier">Intimate Wedding</div><div class="pkg-name">Gulabi</div><div class="pkg-sub">A gorgeous intimate celebration</div>
-        <ul class="pkg-list"><li>Up to 75 guests</li><li>2-night stay</li><li>Beach or garden ceremony</li><li>South Asian dining experience</li><li>Dedicated coordinator</li></ul>
-        <button class="pkg-btn" onclick="go('consult')">Request Pricing</button>
-      </div>
-      <div class="pkg feat">
-        <div class="pkg-badge">Most Popular</div>
-        <div class="pkg-tier">Signature Experience</div><div class="pkg-name">Marigold</div><div class="pkg-sub">The quintessential South Asian experience</div>
-        <ul class="pkg-list"><li>100 to 250 guests</li><li>4-night stay</li><li>Multiple ceremony venues</li><li>Full wedding itinerary</li><li>South Asian culinary team</li><li>Wedding altar and décor setup</li><li>Baraat coordination</li></ul>
-        <button class="pkg-btn" onclick="go('consult')">Request Pricing</button>
-      </div>
-      <div class="pkg">
-        <div class="pkg-tier">Grand Luxury Celebration</div><div class="pkg-name">Sona</div><div class="pkg-sub">An epic large-scale multi-day celebration</div>
-        <ul class="pkg-list"><li>250 to 500+ guests</li><li>Full resort buyout option</li><li>5-day celebration</li><li>Premium chef team</li><li>Bespoke décor design</li><li>Presidential suite</li><li>Full travel coordination</li></ul>
-        <button class="pkg-btn" onclick="go('consult')">Request Pricing</button>
-      </div>
+</section>
+
+<section class="sec s-bl">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:640px;margin:0 auto">
+      <span class="ew cx">Why Book Through DestinationPick?</span>
+      <h2 class="sh" style="text-align:center">The big moments and the small details, <em>all taken care of.</em></h2>
+      <div class="rl cx"></div>
+      <p class="bd" style="margin:0 auto">Palladium is the resort. DestinationPick is your planning partner, managing every layer of coordination from first conversation to final guest departure.</p>
+    </div>
+    <div class="why-grid rv">
+      <div class="wi"><div class="wi-n" style="background:#fff">01</div><div><h4>Destination & Venue Selection</h4><p>Expert guidance to choose the ideal Palladium resort for your vision, guest count, and budget across all three Mexican destinations.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">02</div><div><h4>Room Block Management</h4><p>Guest reservations, room allocations, and room-night tracking, all managed seamlessly so you never have to chase a spreadsheet.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">03</div><div><h4>Guest Travel Coordination</h4><p>Flight tracking, airport transfers, and arrival logistics coordinated across 50 to 300+ guests traveling from multiple cities.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">04</div><div><h4>Multi-Day Event Planning</h4><p>From Mehndi and Sangeet to the Ceremony and Reception, every event is carefully planned without you chasing vendors.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">05</div><div><h4>Vendor Management</h4><p>A curated network of cultural experts including décor specialists, dhol players, DJs, and ceremonial partners.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">06</div><div><h4>Exclusive Partner Benefits</h4><p>Access preferred group rates, special concessions, and wedding incentives available exclusively through our Palladium partnership.</p></div></div>
+      <div class="wi"><div class="wi-n" style="background:#fff">07</div><div><h4>Dedicated Wedding Specialist</h4><p>Your personal South Asian wedding expert from first enquiry to final dance.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec s-sg" id="stories">
+  <div class="wrap">
+    <div class="rv" style="text-align:center;max-width:520px;margin:0 auto">
+      <span class="ew lt cx">Guest Stories</span>
+      <h2 class="sh lt" style="text-align:center">Stories of Celebration</h2>
+      <div class="rl cx lt"></div>
+    </div>
+  </div>
+  <div class="test-sec-inner rv">
+    <div class="test-grid">
+      <div class="tcard"><div class="tc-stars">★★★★★</div><div class="tc-q">"</div><p class="tc-text">Every ritual felt understood and perfectly executed. The Baraat, the mandap, the Sangeet — it was beyond anything we imagined. Our guests are still talking about it.</p><div class="tc-foot"><div class="tc-av">SS</div><div><div class="tc-nm">Simran & Harpreet Singh</div><div class="tc-dt">Riviera Maya · 280 Guests</div></div></div></div>
+      <div class="tcard"><div class="tc-stars">★★★★★</div><div class="tc-q">"</div><p class="tc-text">The wedding altar on the beach was breathtaking. Every detail from the décor to the halal catering was handled with such care and respect — it felt truly personal.</p><div class="tc-foot"><div class="tc-av">AP</div><div><div class="tc-nm">Ananya & Vikram Patel</div><div class="tc-dt">Costa Mujeres · 320 Guests</div></div></div></div>
+      <div class="tcard"><div class="tc-stars">★★★★★</div><div class="tc-q">"</div><p class="tc-text">We never had to worry about a single thing. The food, the planning, the guest experience — flawless throughout every day of our celebration.</p><div class="tc-foot"><div class="tc-av">NS</div><div><div class="tc-nm">Nadia & Omar Sheikh</div><div class="tc-dt">Puerto Vallarta · 240 Guests</div></div></div></div>
     </div>
   </div>
 </section>
@@ -544,33 +600,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="sec s-cr" id="consult">
   <div class="wrap form-wrap rv">
     <div class="flhs">
-      <span class="ew">Free Consultation</span>
+      <span class="ew">Start Your Wedding Planning</span>
       <span class="sc">Let's begin</span>
-      <h2 class="sh" style="font-size:clamp(1.45rem,2.2vw,2rem)">Start Planning Your <em>Dream Wedding</em></h2>
+      <h2 class="sh" style="font-size:clamp(1.45rem,2.2vw,2rem)">Receive a Personalized <em>Wedding Proposal</em> Within 24 Hours</h2>
       <div class="rl"></div>
-      <p class="bd">Your perfect destination wedding starts with a conversation. Share your plans, and we'll create a proposal designed according to your traditions.</p>
-      <span class="recv-lbl">What You'll Receive (Free)</span>
+      <p class="bd">Our South Asian wedding specialists will design a fully customized multi-day celebration tailored to your traditions, guest count, and vision, completely free and with no obligation.</p>
+      <span class="recv-lbl">What You'll Receive</span>
       <ul class="recv-list">
-        <li>Full Name</li>
-        <li>Phone Number</li>
-        <li>Country (United States, Mexico, Canada)</li>
-        <li>Estimated Guest Count</li>
-        <li>Wedding Date</li>
-        <li>Estimated Budget Range (&gt; $15,000, $15,000–$30,000, $30,000–$75,000, $75k+)</li>
+        <li>A fully personalized wedding journey itinerary</li>
+        <li>Curated venue and décor recommendations</li>
+        <li>Expert cultural ceremony planning guidance</li>
+        <li>Exclusive partner pricing and privileges</li>
+        <li>Real-time date availability confirmation</li>
       </ul>
     </div>
     <div class="fc" id="formWrap">
       <div id="formContent">
-        <div class="fc-h">Book Your Free <span>Consultation</span></div>
-        <p class="fc-sub">Get a personalised proposal within 24 hours</p>
+        <div class="fc-h">Request a <span>Proposal</span></div>
+        <p class="fc-sub">Get a personalised plan within 24 hours</p>
         <div class="fg"><label>Full Name *</label><input type="text" placeholder="Full name" id="fullName"/></div>
+        <div class="fg"><label>Email Address *</label><input type="email" placeholder="Email" id="email"/></div>
         <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="+1 (___) ___-____" id="phone"/></div>
-        <div class="fg"><label>Country *</label><select id="country"><option value="" disabled selected>Select</option><option>United States</option><option>Canada</option><option>Mexico</option></select></div>
-        <div class="fg"><label>Estimated Guest Count</label><input type="number" placeholder="e.g. 150" id="guestCount"/></div>
-        <div class="fg"><label>Wedding Date</label><input type="date" id="weddingDate" style="color-scheme:dark"/></div>
+        
+        <div class="fg-row">
+          <div class="fg"><label>Wedding Date</label><input type="date" id="weddingDate" style="color-scheme:dark"/></div>
+          <div class="fg"><label>Guest Count *</label><select id="guestCount"><option value="" disabled selected>Select</option><option>Under 50</option><option>50 – 100</option><option>100 – 200</option><option>200 – 350</option><option>350 – 500</option><option>500+</option></select></div>
+        </div>
+        
         <div class="fg"><label>Estimated Budget Range</label><select id="budget"><option value="" disabled selected>Select</option><option>Under $15,000</option><option>$15,000 – $30,000</option><option>$30,000 – $75,000</option><option>$75,000+</option></select></div>
-        <button class="f-btn" onclick="submitForm()">Get a Personalized Plan</button>
-        <p class="f-trust">100% free • No spam • Delivered in 24 hours</p>
+        
+        <button class="f-btn" onclick="submitForm()">Request a Personalised Proposal</button>
+        <p class="f-trust">Your details remain private. No spam, no obligation.</p>
       </div>
       <div class="f-done" id="formDone">
         <div class="f-done-s">Thank you</div>
@@ -583,29 +643,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <footer class="footer">
   <img class="f-logo" src="https://www.destinationpick.com/images/logo.webp" alt="DestinationPick"/>
-  <p class="f-brand">DestinationPick × Palladium Hotel Group — The Premier Destination Wedding Experience for Indian and South Asian Families.</p>
-  <span class="f-legal">© 2026 DestinationPick. All Rights Reserved. Built in compliance with TICO, IATAN, and international data protection privacy parameters.</span>
+  <p class="f-brand">Palladium Hotel Group × DestinationPick — The Premier Destination Wedding Experience for Indian & South Asian Families.</p>
+  <span class="f-legal">© 2026 DestinationPick. All Rights Reserved.<br>Built in compliance with TICO, IATAN, and international data protection privacy parameters.</span>
 </footer>
 
 <script>
 var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('in')})},{threshold:0.06});
 document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
 function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})}
-function updateBudget(v){
-  var n=parseInt(v,10);
-  document.getElementById('budgetDisplay').textContent=n>=500000?'$500,000+':'$'+n.toLocaleString();
-  var p=((n-15000)/(500000-15000))*100;
-  document.getElementById('budget').style.background='linear-gradient(to right,var(--pink) 0%,var(--pink) '+p+'%,rgba(255,255,255,0.13) '+p+'%)';
-}
+
 function submitForm(){
-  var req=['fullName','phone'],ok=true;
+  var req=['fullName','email','phone','guestCount'],ok=true;
   req.forEach(function(id){var el=document.getElementById(id);if(!el||!el.value.trim()){if(el)el.style.borderColor='rgba(212,137,154,0.9)';ok=false;}else el.style.borderColor='';});
   if(!ok)return;
-  var data={fullName:document.getElementById('fullName').value.trim(),phone:document.getElementById('phone').value.trim(),country:document.getElementById('country').value||'Not specified',guestCount:document.getElementById('guestCount').value||'Not specified',weddingDate:document.getElementById('weddingDate').value||'Not specified',budget:document.getElementById('budget').value||'Not specified',submittedAt:new Date().toLocaleString()};
+  var data={fullName:document.getElementById('fullName').value.trim(),email:document.getElementById('email').value.trim(),phone:document.getElementById('phone').value.trim(),guestCount:document.getElementById('guestCount').value||'Not specified',weddingDate:document.getElementById('weddingDate').value||'Not specified',budget:document.getElementById('budget').value||'Not specified',submittedAt:new Date().toLocaleString()};
   var params=new URLSearchParams(data).toString();
   fetch('https://script.google.com/macros/s/AKfycbzG1HKftLJMFd_hB-GlpRUp-gqN_RQ14hj45jiDjNNNc_BHOMBvN0oAEHvHNZRI5I96/exec?'+params,{mode:'no-cors'})
-  .then(function(){window.location.href='thank.html'})
-  .catch(function(){window.location.href='thank.html'});
+  .then(function(){document.getElementById('formContent').style.display='none';document.getElementById('formDone').style.display='block';})
+  .catch(function(){document.getElementById('formContent').style.display='none';document.getElementById('formDone').style.display='block';});
 }
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){var t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}})});
 
@@ -615,8 +670,7 @@ function initCardScroll(){
 
   var scrollers = [
     {el: document.querySelector('.cer-sec-inner'), cards: document.querySelectorAll('.cer-card')},
-    {el: document.querySelector('.test-sec-inner'), cards: document.querySelectorAll('.tcard')},
-    {el: document.querySelector('.pkg-sec-inner'), cards: document.querySelectorAll('.pkg')}
+    {el: document.querySelector('.test-sec-inner'), cards: document.querySelectorAll('.tcard')}
   ];
 
   function updateActive(scroller){
@@ -640,7 +694,6 @@ function initCardScroll(){
 
   scrollers.forEach(function(s){
     if(!s.el) return;
-    // Set first card active on load
     if(s.cards[0]) s.cards[0].classList.add('is-active');
     s.el.addEventListener('scroll', function(){
       requestAnimationFrame(function(){ updateActive(s); });
@@ -648,7 +701,6 @@ function initCardScroll(){
   });
 }
 
-// Run after fonts/layout settle
 window.addEventListener('load', initCardScroll);
 window.addEventListener('resize', initCardScroll);
 </script>
