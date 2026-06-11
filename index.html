@@ -660,29 +660,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>Real-time date availability confirmation</li>
       </ul>
     </div>
-    <div class="fc" id="formWrap">
-      <div id="formContent">
-        <div class="fc-h">Request a <span>Proposal</span></div>
-        <p class="fc-sub">Get a personalised plan within 24 hours</p>
-        <div class="fg"><label>Full Name *</label><input type="text" placeholder="Full name" id="fullName"/></div>
-        <div class="fg"><label>Email Address *</label><input type="email" placeholder="Email" id="email"/></div>
-        <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="+1 (___) ___-____" id="phone"/></div>
+    <div class="fc">
+      <div class="fc-h">Request a <span>Proposal</span></div>
+      <p class="fc-sub">Get a personalised plan within 24 hours</p>
+      <form id="weddingForm">
+        <div class="fg"><label>Full Name *</label><input type="text" name="fullName" placeholder="Full name" required/></div>
+        <div class="fg"><label>Email Address *</label><input type="email" name="email" placeholder="Email" required/></div>
+        <div class="fg"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+1 (___) ___-____" required/></div>
         
         <div class="fg-row">
-          <div class="fg"><label>Wedding Date</label><input type="date" id="weddingDate" style="color-scheme:dark"/></div>
-          <div class="fg"><label>Guest Count *</label><select id="guestCount"><option value="" disabled selected>Select</option><option>Under 50</option><option>50 – 100</option><option>100 – 200</option><option>200 – 350</option><option>350 – 500</option><option>500+</option></select></div>
+          <div class="fg"><label>Wedding Date</label><input type="date" name="weddingDate" style="color-scheme:dark"/></div>
+          <div class="fg"><label>Guest Count *</label><select name="guestCount" required><option value="" disabled selected>Select</option><option>Under 50</option><option>50 – 100</option><option>100 – 200</option><option>200 – 350</option><option>350 – 500</option><option>500+</option></select></div>
         </div>
         
-        <div class="fg"><label>Estimated Budget Range</label><select id="budget"><option value="" disabled selected>Select</option><option>Under $15,000</option><option>$15,000 – $30,000</option><option>$30,000 – $75,000</option><option>$75,000+</option></select></div>
+        <div class="fg"><label>Estimated Budget Range</label><select name="budget"><option value="" disabled selected>Select</option><option>Under $15,000</option><option>$15,000 – $30,000</option><option>$30,000 – $75,000</option><option>$75,000+</option></select></div>
         
-        <button class="f-btn" onclick="submitForm()">Request a Personalised Proposal</button>
-        <p class="f-trust">Your details remain private. No spam, no obligation.</p>
-      </div>
-      <div class="f-done" id="formDone">
-        <div class="f-done-s">Thank you</div>
-        <h4>Your enquiry has been received</h4>
-        <p>A Palladium South Asian wedding specialist will be in touch within 24 hours.</p>
-      </div>
+        <button type="submit" class="f-btn">Request a Personalised Proposal</button>
+      </form>
+      <p class="f-trust">Your details remain private. No spam, no obligation.</p>
     </div>
   </div>
 </section>
@@ -698,16 +693,33 @@ var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isInters
 document.querySelectorAll('.rv').forEach(function(el){obs.observe(el)});
 function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})}
 
-function submitForm(){
-  var req=['fullName','email','phone','guestCount'],ok=true;
-  req.forEach(function(id){var el=document.getElementById(id);if(!el||!el.value.trim()){if(el)el.style.borderColor='rgba(212,137,154,0.9)';ok=false;}else el.style.borderColor='';});
-  if(!ok)return;
-  var data={fullName:document.getElementById('fullName').value.trim(),email:document.getElementById('email').value.trim(),phone:document.getElementById('phone').value.trim(),guestCount:document.getElementById('guestCount').value||'Not specified',weddingDate:document.getElementById('weddingDate').value||'Not specified',budget:document.getElementById('budget').value||'Not specified',submittedAt:new Date().toLocaleString()};
-  var params=new URLSearchParams(data).toString();
-  fetch('https://script.google.com/macros/s/AKfycbzG1HKftLJMFd_hB-GlpRUp-gqN_RQ14hj45jiDjNNNc_BHOMBvN0oAEHvHNZRI5I96/exec?'+params,{mode:'no-cors'})
-  .then(function(){document.getElementById('formContent').style.display='none';document.getElementById('formDone').style.display='block';})
-  .catch(function(){document.getElementById('formContent').style.display='none';document.getElementById('formDone').style.display='block';});
-}
+// Google Sheets Integration with Thank You redirect
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzG1HKftLJMFd_hB-GlpRUp-gqN_RQ14hj45jiDjNNNc_BHOMBvN0oAEHvHNZRI5I96/exec';
+
+document.getElementById('weddingForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const formData = new FormData(e.target);
+  const data = {
+    timestamp: new Date().toISOString(),
+    formType: 'Palladium Wedding Form'
+  };
+  
+  for (let [key, value] of formData.entries()) {
+    data[key] = value || 'Not specified';
+  }
+  
+  const url = SCRIPT_URL + '?' + new URLSearchParams(data).toString();
+  
+  try {
+    await fetch(url, { mode: 'no-cors' });
+    window.location.href = 'thank.html';
+  } catch (error) {
+    console.error('Submission error:', error);
+    window.location.href = 'thank.html';
+  }
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){var t=document.querySelector(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}})});
 
 /* ── CARD SCALE ANIMATION (mobile only) ── */
